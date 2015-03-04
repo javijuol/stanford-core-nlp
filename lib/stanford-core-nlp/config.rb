@@ -7,7 +7,8 @@ module StanfordCoreNLP
     LanguageCodes = {
       :english => [:en, :eng, :english],
       :german => [:de, :ger, :german],
-      :french => [:fr, :fre, :french]
+      :french => [:fr, :fre, :french],
+      :spanish => [:es, :spa, :spanish],
     }
 
     # Folders inside the JAR path for the models.
@@ -22,7 +23,8 @@ module StanfordCoreNLP
     TagSets = {
       :english => :penn,
       :german => :stutgart,
-      :french => :paris7
+      :french => :paris7,
+      :spanish => :penn,
     }
     
     # Default models for all languages.
@@ -31,18 +33,22 @@ module StanfordCoreNLP
       :pos => {
         :english => 'english-left3words-distsim.tagger',
         :german => 'german-fast.tagger',
-        :french  => 'french.tagger'
+        :french  => 'french.tagger',
+        :spanish  => 'spanish.tagger'
       },
       
       :parse => {
         :english => 'englishPCFG.ser.gz',
         :german => 'germanPCFG.ser.gz',
-        :french  => 'frenchFactored.ser.gz'
+        :french  => 'frenchFactored.ser.gz',
+        :spanish => 'spanishPCFG.ser.gz'
       },
       
       :ner => {
-        :english => 'english.all.3class.distsim.crf.ser.gz'
-        # :german => {} # Add this at some point.
+        :english => 'english.all.3class.distsim.crf.ser.gz',
+        # :german => {}, # Add this at some point.
+        # :french => {}, # Add this at some point.
+        :spanish => 'spanish.ancora.distsim.s512.crf.ser.gz'
       },
       
       :dcoref => {
@@ -62,7 +68,8 @@ module StanfordCoreNLP
           'singleton.predictor' => 'singleton.predictor.ser'
         },
         :german => {},
-        :french  => {}
+        :french => {},
+        :spanish => {}
       }
       
       # Models to add.
